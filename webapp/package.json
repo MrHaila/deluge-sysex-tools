@@ -1,0 +1,12 @@
+{
+  "name": "@deluge/webapp",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

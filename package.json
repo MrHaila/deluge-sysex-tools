@@ -1,0 +1,9 @@
+{
+  "name": "deluge-sysex-tools-monorepo",
+  "private": true,
+  "workspaces": [
+    "cli",
+    "webapp",
+    "webmidi-bridge"
+  ]
+}

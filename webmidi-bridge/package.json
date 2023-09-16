@@ -1,0 +1,14 @@
+{
+  "name": "@deluge/webmidi-bridge",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "webmidi": "^3.1.6"
+  }
+}
