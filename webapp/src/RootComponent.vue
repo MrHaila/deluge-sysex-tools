@@ -6,7 +6,7 @@
     <template #content>
       <p>Obvious future things to do would be local web MIDI API permission management and nice buttons for triggering actions with good feedback on success/error.</p>
       <pre
-        class="mt-3 text-sm font-mono bg-neutral-100 rounded-md border border-neutral-200 shadow-sm p-3"
+        class="mt-3 text-sm font-mono bg-gray-100 dark:bg-gray-700 rounded-md border border-gray-200 dark:border-gray-600 shadow-sm p-3"
         v-if="devices"
         >{{ JSON.stringify(devices, null, 2) }}</pre>
     </template>
