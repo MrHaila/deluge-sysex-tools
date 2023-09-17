@@ -1,12 +1,22 @@
 {
   "name": "@deluge/webapp",
-  "module": "index.ts",
-  "type": "module",
   "private": true,
-  "devDependencies": {
-    "bun-types": "latest"
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
   },
-  "peerDependencies": {
-    "typescript": "^5.2.2"
+  "dependencies": {
+    "vue": "^3.3.4",
+    "@deluge/webmidi-bridge": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "bun-types": "latest",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
   }
 }
