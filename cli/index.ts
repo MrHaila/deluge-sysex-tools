@@ -20,6 +20,7 @@ program
 
     console.log('Outputs')
     outputs.forEach(output => console.log(`  ${asGreen('←')} ${asBright(output.name)} by ${output.manufacturer}`))
+    if (!outputs.length) console.log(asDim('  (none)'))
 
     close()
   })
