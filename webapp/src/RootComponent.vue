@@ -1,4 +1,5 @@
 <template>
+<Toast/>
 <div class="max-w-3xl mx-auto my-8 space-y-3">
   <Card>
     <template #title>Connected MIDI Devices</template>
@@ -22,14 +23,28 @@ import { listConnectedDevices } from '@deluge/webmidi-bridge'
 
 import Button from 'primevue/button'
 import Card from 'primevue/card'
+import Toast from 'primevue/toast'
+import { useToast } from 'primevue/usetoast'
 
 const devices = ref<Awaited<ReturnType<typeof listConnectedDevices>>>()
-
+  
+const toast = useToast()
 async function listDevices () {
   try {
     devices.value = await listConnectedDevices()
   } catch (err) {
-    console.error('Failed to list connected devices:', err)
+    if (err instanceof DOMException && err.name === 'SecurityError') {
+      console.error('No permission:', err)
+      toast.add({
+        severity: 'error',
+        summary: 'No permission',
+        detail: 'Permission denied. Please grant permission to access MIDI devices.',
+        life: 5000
+      })
+      return
+    }
+
+    throw err
   }
 }
 </script>
